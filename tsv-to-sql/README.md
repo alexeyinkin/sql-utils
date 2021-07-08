@@ -20,7 +20,7 @@ Examples:
 python3 tsv-to-sql.py \
     --tsv=../../geonames-utils/cities500.txt \
     --table=City \
-    --column=0,id,pk \
+    --column=0,id,pk,int \
     --column=1,name \
     --column=4,latitude \
     --column=5,longitude \
@@ -35,13 +35,12 @@ python3 tsv-to-sql.py \
 python3 tsv-to-sql.py \
     --tsv=../../geonames-utils/extract-city-altnames/altnames.tsv \
     --table=CityName \
-    --column=0,id,pk \
+    --column=0,id,pk,int \
+    --column=0,syncName \
     --column=1,id_nameCity \
     --column=2,lang \
     --column=3,name \
-    --column=4,isPreferredName,int \
-    --column=5,isShortName,int \
-    --column=10,countryCode \
-    --column=11,population \
+    --column=4,countryCode \
+    --column=5,population \
     > altnames.sql
 ```
